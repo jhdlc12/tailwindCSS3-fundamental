@@ -58,32 +58,33 @@
     <script src="js/main.js" defer></script>
   </head>
 
-  <body class="bg-amber-600">
+  <body class="bg-gray-950">
     <div id="container" class="container bg-gray-50  mx-auto">
-      <header>
-        <h1>HArold</h1>
-        <div id="site-name" class="text-2xl font-bold text-yellow-500 p-2 whitespace-nowrap">
-          <a href="/"><i class="fas fa-film"></i> The Bechdel Test</a>
-        </div>
-        <section id="menu">
-          <div><select id="year-select"></select></div>
-          <div>
-            <button id="menu-all" class="button selected">
-              <i class="fas fa-book-open"></i> All Films
-            </button>
+      <div class="flex flex-col md:flex-row gap-1">
+        <header class="py-1 px-2 text-gray-800 bg-yellow-800">
+          <div id="site-name" class="text-2xl font-bold text-gray-800 p-2 whitespace-nowrap">
+            <a href="/"><i class="fas fa-film"></i> The Bechdel Test</a>
           </div>
+          <section id="menu" >
+            <div><select id="year-select" class="text-center"></select></div>
+            <div>
+              <button id="menu-all" class="button selected w-full">
+                <i class="fas fa-book-open"></i> All Films
+              </button>
+            </div>
+            <div>
+              <button id="menu-pass" class="button w-full">
+                <i class="fas fa-check"></i> Passing Films
+              </button>
+            </div>
+          
           <div>
-            <button id="menu-pass" class="button">
-              <i class="fas fa-check"></i> Passing Films
-            </button>
-          </div>
-          <div>
-            <button id="menu-fail" class="button">
+            <button id="menu-fail" class="button w-full">
               <i class="fas fa-xmark"></i> Failing Films
             </button>
           </div>
           <div>
-            <button id="send-message" class="button">
+            <button id="send-message" class="button w-full">
               <i class="fas fa-envelope"></i> Contact Us
             </button>
           </div>
@@ -95,16 +96,19 @@
       </section>
       </header>
 
-      <section id="main">
-        <div id="pager">
-          <button class="button" id="prev-page">
-            <i class="fas fa-chevron-left"></i> Prev
-          </button>
-          <button class="button" id="next-page">
-            Next <i class="fas fa-chevron-right"></i>
-          </button>
+      <section id="main"  class="bg-cover flex flex-col" style="background-image: url(img/bg-seats.jpg)">
+        <div id="pager" class="float-end">
+          <span class="float-end">
+            <button class="button" id="prev-page">
+              <i class="fas fa-chevron-left"></i> Prev
+            </button>
+            <button class="button" id="next-page">
+              Next <i class="fas fa-chevron-right"></i>
+            </button>
+          </span>
+         
         </div>
-        <div id="results">
+        <div id="results" class="grid grid-cols-1 lg:grid-cols-2 huge:grid-cols-5">
           <div class="film">
             <div class="ph-item">
               <div class="ph-col-12">
@@ -180,6 +184,7 @@
         </div>
       </section>
     </div>
+    </div>
     <footer>
       <div>
         Bechdel Test - An Example Website based on
@@ -188,10 +193,10 @@
         >
       </div>
     </footer>
-    <dialog id="mail">
+    <dialog id="mail" class="w-96 rounded-lg bg-yellow-800 text-gray-800 p-5">
       <div>
         <div>
-          <div id="close-icon">
+          <div id="close-icon" class="float-right cursor-pointer hover:bg-red-500 rounded-full">
             &#10006;
           </div>
           <h1>Send us a Message</h1>
